@@ -28,7 +28,7 @@ namespace Mini_TC
             try
             {
                 File.Copy(sourcePath, targetPath, overwrite: true);
-                MessageBox.Show("Skopiowano.");
+                MessageBox.Show("Skopiowano pomyœlnie.");
                 target.RefreshContent();
             }
             catch (Exception ex)
