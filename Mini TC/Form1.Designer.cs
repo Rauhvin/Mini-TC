@@ -28,12 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            paneltc1 = new PanelTC();
+            paneltc2 = new PanelTC();
+            copyButton = new Button();
+            SuspendLayout();
+            // 
+            // paneltc1
+            // 
+            paneltc1.Location = new Point(12, -2);
+            paneltc1.Name = "paneltc1";
+            paneltc1.Size = new Size(305, 476);
+            paneltc1.TabIndex = 0;
+            // 
+            // paneltc2
+            // 
+            paneltc2.Location = new Point(263, -2);
+            paneltc2.Name = "paneltc2";
+            paneltc2.Size = new Size(305, 476);
+            paneltc2.TabIndex = 1;
+            // 
+            // copyButton
+            // 
+            copyButton.Location = new Point(211, 380);
+            copyButton.Name = "copyButton";
+            copyButton.Size = new Size(94, 29);
+            copyButton.TabIndex = 2;
+            copyButton.Text = "Copy >>";
+            copyButton.UseVisualStyleBackColor = true;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(527, 450);
+            Controls.Add(copyButton);
+            Controls.Add(paneltc2);
+            Controls.Add(paneltc1);
+            Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "MiniTC";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private PanelTC paneltc1;
+        private PanelTC paneltc2;
+        private Button copyButton;
     }
 }
