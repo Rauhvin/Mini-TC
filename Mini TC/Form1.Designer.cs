@@ -28,52 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
-            paneltc1 = new PanelTC();
-            paneltc2 = new PanelTC();
+            panelTCLeft = new PanelTC();
+            panelTCRight = new PanelTC();
             copyButton = new Button();
             SuspendLayout();
             // 
-            // paneltc1
+            // panelTCLeft
             // 
-            paneltc1.Location = new Point(12, -2);
-            paneltc1.Name = "paneltc1";
-            paneltc1.Size = new Size(305, 476);
-            paneltc1.TabIndex = 0;
+            panelTCLeft.CurrentPath = "";
+            panelTCLeft.Location = new Point(10, -2);
+            panelTCLeft.Margin = new Padding(3, 2, 3, 2);
+            panelTCLeft.Name = "panelTCLeft";
+            panelTCLeft.Size = new Size(326, 384);
+            panelTCLeft.TabIndex = 0;
             // 
-            // paneltc2
+            // panelTCRight
             // 
-            paneltc2.Location = new Point(263, -2);
-            paneltc2.Name = "paneltc2";
-            paneltc2.Size = new Size(305, 476);
-            paneltc2.TabIndex = 1;
+            panelTCRight.CurrentPath = "";
+            panelTCRight.Location = new Point(342, -2);
+            panelTCRight.Margin = new Padding(3, 2, 3, 2);
+            panelTCRight.Name = "panelTCRight";
+            panelTCRight.Size = new Size(330, 384);
+            panelTCRight.TabIndex = 1;
             // 
             // copyButton
             // 
-            copyButton.Location = new Point(211, 380);
+            copyButton.Location = new Point(301, 386);
+            copyButton.Margin = new Padding(3, 2, 3, 2);
             copyButton.Name = "copyButton";
-            copyButton.Size = new Size(94, 29);
+            copyButton.Size = new Size(82, 22);
             copyButton.TabIndex = 2;
             copyButton.Text = "Copy >>";
             copyButton.UseVisualStyleBackColor = true;
+            copyButton.Click += btnCopy_Click;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(527, 450);
+            BackColor = SystemColors.Control;
+            ClientSize = new Size(684, 424);
             Controls.Add(copyButton);
-            Controls.Add(paneltc2);
-            Controls.Add(paneltc1);
+            Controls.Add(panelTCRight);
+            Controls.Add(panelTCLeft);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MiniTC";
+            Load += Form1_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
-        private PanelTC paneltc1;
-        private PanelTC paneltc2;
+        private PanelTC panelTCLeft;
+        private PanelTC panelTCRight;
         private Button copyButton;
     }
 }
