@@ -2,7 +2,7 @@
 
 namespace Mini_TC.View
 {
-    public interface IPanelTCView
+    public interface View
     {
         string SelectedItem { get; }
         string CurrentPath { get; set; }

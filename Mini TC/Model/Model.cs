@@ -2,7 +2,7 @@
 
 namespace Mini_TC.Model
 {
-    public static class FileSystemModel
+    public static class Model
     {
         public static DriveInfo[] GetDrives() => DriveInfo.GetDrives();
 

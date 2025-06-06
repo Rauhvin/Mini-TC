@@ -8,14 +8,14 @@ using System.Windows.Forms;
 
 namespace Mini_TC
 {
-    public partial class PanelTC : UserControl, IPanelTCView
+    public partial class PanelTC : UserControl, View.View
     {
-        private readonly PanelPresenter _presenter;
+        private readonly Presenter.Presenter _presenter;
 
         public PanelTC()
         {
             InitializeComponent();
-            _presenter = new PanelPresenter(this);
+            _presenter = new Presenter.Presenter(this);
 
             comboBox1.DropDown += ComboBox1_DropDown;
             comboBox1.SelectedIndexChanged += ComboBox1_SelectedIndexChanged;

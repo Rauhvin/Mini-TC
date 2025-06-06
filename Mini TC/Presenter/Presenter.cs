@@ -6,18 +6,18 @@ using System.IO;
 
 namespace Mini_TC.Presenter
 {
-    public class PanelPresenter
+    public class Presenter
     {
-        private readonly IPanelTCView _view;
+        private readonly View.View _view;
 
-        public PanelPresenter(IPanelTCView view)
+        public Presenter(View.View view)
         {
             _view = view;
         }
 
         public void LoadDrives()
         {
-            var drives = FileSystemModel.GetDrives();
+            var drives = Model.Model.GetDrives();
             var ready = new List<string>();
             foreach (var d in drives)
                 if (d.IsReady)
@@ -33,10 +33,10 @@ namespace Mini_TC.Presenter
             if (Directory.GetDirectoryRoot(path) != path)
                 items.Add("..");
 
-            foreach (var dir in FileSystemModel.GetDirectories(path))
+            foreach (var dir in Model.Model.GetDirectories(path))
                 items.Add("<D> " + Path.GetFileName(dir));
 
-            foreach (var file in FileSystemModel.GetFiles(path))
+            foreach (var file in Model.Model.GetFiles(path))
                 items.Add(Path.GetFileName(file));
 
             _view.CurrentPath = path;
@@ -47,7 +47,7 @@ namespace Mini_TC.Presenter
         {
             if (selected == "..")
             {
-                var parent = FileSystemModel.GetParentDirectory(currentPath);
+                var parent = Model.Model.GetParentDirectory(currentPath);
                 return parent ?? currentPath;
             }
 
